@@ -1,0 +1,35 @@
+[
+  {
+      "prelude": ">>> let x = 20\n>>> x + 2\n>>> print(x)",
+      "answer": "20"
+  },
+  {
+      "prelude": ">>> let y = 10\n>>> let z = 5\n>>> let sum = y + z\n>>> print(sum)",
+      "answer": "15"
+  },
+  {
+      "prelude": ">>> let a = 3\n>>> let b = 4\n>>> let product = a * b\n>>> print(product)",
+      "answer": "12"
+  },
+  {
+      "prelude": ">>> let greeting = \"Hello, World!\"\n>>> print(greeting)",
+      "answer": "Hello, World!"
+  },
+  {
+      "prelude": ">>> let numbers = [1, 2, 3, 4, 5]\n>>> let first = numbers.first\n>>> print(first!)",
+      "answer": "1"
+  },
+  {
+      "prelude": ">>> let name = \"Alice\"\n>>> let message = \"Hello, \\(name)!\"\n>>> print(message)",
+      "answer": "Hello, Alice!"
+  },
+  {
+      "prelude": ">>> let isSwiftFun = true\n>>> print(isSwiftFun)",
+      "answer": "true"
+  },
+  {
+      "prelude": ">>> let fahrenheit = 98.6\n>>> let celsius = (fahrenheit - 32) * 5 / 9\n>>> print(celsius)",
+      "answer": "37.0"
+  }
+]
+
