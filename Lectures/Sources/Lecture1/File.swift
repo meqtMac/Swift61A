@@ -11,8 +11,7 @@ import Logging
 // we need to create a logger, the label works similarly to a DispatchQueue label
 let logger = Logger(label: "org.swift61a.lecture01")
 
-
-let shakespeara: () -> String = {
+public let shakespeara: () -> String = {
     let filePath = FilePath(#filePath)
         .removingLastComponent()
         .removingLastComponent()

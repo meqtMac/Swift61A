@@ -1,6 +1,10 @@
-# Swift61A Course Design
+# ``Swift61A Course Design``
 
 what CS61A has to learn from and what are missing from CS61A
+## Introduction to Swift and Swift61A Sharing
+
+
+## Installation
 
 ## The basics
 
