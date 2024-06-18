@@ -6,6 +6,11 @@
 //
 
 import SystemPackage
+import Logging
+
+// we need to create a logger, the label works similarly to a DispatchQueue label
+let logger = Logger(label: "org.swift61a.lecture01")
+
 
 let shakespeara: () -> String = {
     let filePath = FilePath(#filePath)
@@ -24,9 +29,9 @@ let shakespeara: () -> String = {
             return try String(unsafeUninitializedCapacity: Int(byteSize)) { buffer in
                 try fd.read(into: .init(buffer), retryOnInterrupt: true)
             }
-            
         }
     } catch {
+        logger.error("\(error)")
         return ""
     }
 }

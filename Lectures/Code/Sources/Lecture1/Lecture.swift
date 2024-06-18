@@ -1,25 +1,15 @@
 // The Swift Programming Language
 // https://docs.swift.org/swift-book
 
-//import
 
-import Logging
-// we need to create a logger, the label works similarly to a DispatchQueue label
-let logger = Logger(label: "org.swift61a.lecture01")
+import Foundation
 
 @main
-struct Lecture {
+struct Lecture01 {
     static func main() throws {
         let str = shakespeara()
-        let words = str.split { char in
-            char == " " ||
-            char == "\n" ||
-            char == "\r" ||
-            char == "\t" ||
-            char == "," ||
-            char == "."
-        }
-        
+        let words = str.components(separatedBy: .whitespacesAndNewlines)
+       
         let freq = {
             var dict: [String: Int] = [:]
             words.forEach {
@@ -28,9 +18,8 @@ struct Lecture {
             return dict
         }()
         
-       freq
-            .map { ($0, $1) }
-            .sorted { $0.1 > $1.1 }
+        freq.map { (str: $0, count: $1) }
+            .sorted { $0.count > $1.count }
             .prefix(10)
             .forEach { str, count in
                 print("\(str)\t\(count)")
