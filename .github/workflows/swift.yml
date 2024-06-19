@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   build:
-    name: Swift ${{ matrix.swift }} on ${{ matrix.os }}
+    name: Swift ${{ matrix.swift }} on ${{ matrix.os }} for ${{ matrix.target.name }}
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest]
@@ -32,8 +32,10 @@ jobs:
       with:
         swift-version: ${{ matrix.swift }}  # Specify the Swift version you need
 
-    - name: Change to homework directory
-      run: cd ${{ matrix.target.path }}
+    # - name: Change to homework directory
+    #   run: cd ${{ matrix.target.path }}
 
     - name: Build and test
-      run: swift test --filter ${{ matrix.target.name }}
+      run: | 
+        cd ${{ matrix.target.path }}
+        swift test --filter ${{ matrix.target.name }}
