@@ -8,7 +8,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest]
-        swift: ["5.10.1"]
+        swift: ["5.10"]
         target: [Homework01AnswerTests]  # Add more targets as needed
 
     runs-on: ${{ matrix.os }}
