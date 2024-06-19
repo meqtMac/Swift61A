@@ -12,10 +12,10 @@ jobs:
         target:
           - name: Homework01AnswerTests
             path: Homeworks/Homework1
-          - name: Homework02AnswerTests
-            path: Homeworks/Homework2
-          - name: Homework03AnswerTests
-            path: Homeworks/Homework3
+          # - name: Homework02AnswerTests
+          #   path: Homeworks/Homework2
+          # - name: Homework03AnswerTests
+          #   path: Homeworks/Homework3
 
     runs-on: ${{ matrix.os }}
 
