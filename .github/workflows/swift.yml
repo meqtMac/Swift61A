@@ -9,7 +9,13 @@ jobs:
       matrix:
         os: [ubuntu-latest, macos-latest]
         swift: ["5.10"]
-        target: [Homework01AnswerTests]  # Add more targets as needed
+        target:
+          - name: Homework01AnswerTests
+            path: Homeworks/Homework1
+          - name: Homework02AnswerTests
+            path: Homeworks/Homework2
+          - name: Homework03AnswerTests
+            path: Homeworks/Homework3
 
     runs-on: ${{ matrix.os }}
 
@@ -26,5 +32,8 @@ jobs:
       with:
         swift-version: ${{ matrix.swift }}  # Specify the Swift version you need
 
+    - name: Change to homework directory
+      run: cd ${{ matrix.target.path }}
+
     - name: Build and test
-      run: swift test --filter ${{ matrix.target }}
+      run: swift test --filter ${{ matrix.target.name }}
