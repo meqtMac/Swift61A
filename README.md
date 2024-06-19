@@ -1,9 +1,8 @@
-# ``Swift61A Course Design``
+# Swift61A(Linux Supported)
 
-what CS61A has to learn from and what are missing from CS61A
-## Introduction to Swift and Swift61A Sharing
+Introduction to Swift and Sharing of my thought on how to learn Swift like [CS61A](https://cs61a.org)
 
-
+## [Install](docs/Install.md)
 
 ## The basics
 
