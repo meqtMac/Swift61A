@@ -6,12 +6,14 @@
 [swiftly](https://swiftlang.github.io/swiftly/) A Swift Toolchain installer and manager.
 
 - show kernel and distribution
+(hzk windows terminal ubuntu)
 ```sh
 # show kernel
 uname -a
 # show release, method various with distribution
 cat /etc/lsb-release 
 ```
+open website [swiftly](https://swiftlang.github.io/swiftly/)
 - update apt
 ```sh
 sudo apt update 
@@ -133,8 +135,3 @@ and I love visual studio code as there are pretty much extensions including swif
 code Swift61ADemo
 ```
 now you can enjoy coding in swift and have fun with this course
-
-hide this part
-// ## macOS
-// Install swift on macOS was pretty easy, swift and related tools are bundled with Xcode command lines, you just need to update your system to latest version and download Xcode from app store.
-
