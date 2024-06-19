@@ -34,7 +34,7 @@ let package = Package(
                 .product(name: "Logging", package: "swift-log"),
             ]
         ),
-        .target(
+        .executableTarget(
             name: "Lecture1",
             dependencies: [
                 .product(name: "SystemPackage", package: "swift-system"),

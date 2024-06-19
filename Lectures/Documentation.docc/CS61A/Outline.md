@@ -1,5 +1,15 @@
 # Swift61A Video Content List
 
+## WelCome
+
+## Functions
+
+## Control
+
+## Higher-Order Functions
+
+## Environments
+
 ## Iterators
 
 ### Iterators

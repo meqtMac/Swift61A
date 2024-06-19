@@ -1,16 +1,15 @@
 // The Swift Programming Language
 // https://docs.swift.org/swift-book
 
+import Foundation
 
-//import Foundation
-//
-//@main
-//struct Lecture01 {
-//    static func main() throws {
-//        let str = shakespeara()
-//        let words = str.components(separatedBy: .whitespacesAndNewlines)
-//       
-//        let freq = {
+@main
+struct Lecture01 {
+    static func main() {
+        let str = shakespeara()
+        let _ = str.components(separatedBy: .whitespacesAndNewlines)
+
+        // let freq = {
 //            var dict: [String: Int] = [:]
 //            words.forEach {
 //                dict[String($0), default: 0] += 1
@@ -45,5 +44,8 @@
 //                print(str)
 //            }
 //        
-//    }
-//}
+    }
+}
+
+
+
