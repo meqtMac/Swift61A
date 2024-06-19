@@ -1,6 +1,3 @@
-// The Swift Programming Language
-// https://docs.swift.org/swift-book
-
 /// Compute the falling factorial of n to depth k.
 ///
 /// Examples:
@@ -16,8 +13,12 @@
 ///   - k: The depth of the factorial
 /// - Returns: The falling factorial of n to depth k
 func falling(n: Int, k: Int) -> Int {
-    // TODO: Your CODE HERE
-    return 0
+    guard k > 0 else { return 1 }
+    var result = 1
+    for i in 0..<k {
+        result *= (n - i)
+    }
+    return result
 }
 
 /// Sum all the digits of y.
@@ -34,8 +35,13 @@ func falling(n: Int, k: Int) -> Int {
 /// - Parameter y: The nonnegative integer
 /// - Returns: The sum of all digits of y
 func sumDigits(y: Int) -> Int {
-    // TODO: Your CODE HERE
-    return 0
+    var sum = 0
+    var number = y
+    while number > 0 {
+        sum += number % 10
+        number /= 10
+    }
+    return sum
 }
 
 /// Return true if n has two eights in a row.
@@ -53,6 +59,15 @@ func sumDigits(y: Int) -> Int {
 /// - Parameter n: The number to check
 /// - Returns: True if n has two eights in a row, false otherwise
 func doubleEights(n: Int) -> Bool {
-    // TODO: Your CODE HERE
-    return false 
+    var number = n
+    var prevDigit = -1
+    while number > 0 {
+        let digit = number % 10
+        if digit == 8 && prevDigit == 8 {
+            return true
+        }
+        prevDigit = digit
+        number /= 10
+    }
+    return false
 }

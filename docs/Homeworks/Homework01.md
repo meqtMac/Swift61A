@@ -1,6 +1,8 @@
-// The Swift Programming Language
-// https://docs.swift.org/swift-book
+# Lab 1: Variables & Functions, Control
 
+## Q1: Falling Factorial
+Let's write a function `falling`, which is a "falling" factorial that takes two arguments, n and k, and returns the product of k consecutive numbers, starting from n and working downwards.
+```swift
 /// Compute the falling factorial of n to depth k.
 ///
 /// Examples:
@@ -17,9 +19,12 @@
 /// - Returns: The falling factorial of n to depth k
 func falling(n: Int, k: Int) -> Int {
     // TODO: Your CODE HERE
-    return 0
 }
+```
 
+## Q2: Sum Digits
+Write a function that takes in a nonnegative integer and sums its digits.
+```swift
 /// Sum all the digits of y.
 ///
 /// Examples:
@@ -35,9 +40,12 @@ func falling(n: Int, k: Int) -> Int {
 /// - Returns: The sum of all digits of y
 func sumDigits(y: Int) -> Int {
     // TODO: Your CODE HERE
-    return 0
 }
+```
 
+## Q3: Double Eights
+Write a function that takes in a number and determines if the digits contain two adjacent 8s.
+```swift
 /// Return true if n has two eights in a row.
 ///
 /// Examples:
@@ -54,5 +62,8 @@ func sumDigits(y: Int) -> Int {
 /// - Returns: True if n has two eights in a row, false otherwise
 func doubleEights(n: Int) -> Bool {
     // TODO: Your CODE HERE
-    return false 
 }
+```
+
+## Answer
+You can look for AnswerCode  under `Homework01Answer` target

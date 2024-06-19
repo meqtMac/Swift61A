@@ -6,14 +6,12 @@
 [swiftly](https://swiftlang.github.io/swiftly/) A Swift Toolchain installer and manager.
 
 - show kernel and distribution
-(hzk windows terminal ubuntu)
 ```sh
 # show kernel
 uname -a
-# show release, method various with distribution
+# show distribution
 cat /etc/lsb-release 
 ```
-open website [swiftly](https://swiftlang.github.io/swiftly/)
 - update apt
 ```sh
 sudo apt update 
@@ -22,10 +20,9 @@ sudo apt update
 ```sh
 curl -L https://swiftlang.github.io/swiftly/swiftly-install.sh | bash
 ``` 
-this process should be done in terminal
 
-### zprofile
-after installation, path configuration was written to `.zprofile` under home directory; `.zprofile` was load each time user login; this way `swiftly` was not added to `$PATH` immediately; to test installation we can first source `.zprofile` to test the installation
+### `.zprofile`
+After installation, path configuration was written to `.zprofile` under home directory; `.zprofile` was load each time user login, which means `swiftly` was not added to `$PATH` immediately; to test installation we can first `source ~/.zprofile` to test the installation
 ```sh
 swiftly --version # not found
 echo $PATH # path was not added
