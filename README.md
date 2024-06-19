@@ -5,7 +5,7 @@ Introduction to Swift and Sharing of my thought on how to learn Swift like [CS61
 ### [Install](docs/Install.md)
 
 ## 📝Homeworks
-- </>[Homework01](docs/Homeworks/Homework01.md)
+- </>[Homework1](docs/Homeworks/Homework1.md)
 
 ## The basics
 

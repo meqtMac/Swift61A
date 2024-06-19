@@ -10,7 +10,7 @@ jobs:
         os: [ubuntu-latest, macos-latest]
         swift: ["5.10"]
         target:
-          - name: Homework01AnswerTests
+          - name: Homework1AnswerTests
             path: Homeworks/Homework1
           # - name: Homework02AnswerTests
           #   path: Homeworks/Homework2

@@ -1,7 +1,7 @@
 import XCTest
-@testable import Homework01Answer
+@testable import Homework1
 
-final class Homework01Tests: XCTestCase {
+final class Homework1Tests: XCTestCase {
    func testFalling() throws {
         XCTAssertEqual(falling(n: 6, k: 3), 120)  // 6 * 5 * 4
         XCTAssertEqual(falling(n: 4, k: 3), 24)   // 4 * 3 * 2
