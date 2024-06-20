@@ -143,3 +143,50 @@ func compositeIdentity(_ f: @escaping (Int) -> Int, _ g: @escaping (Int) -> Int)
 }
 ```
 
+## Q4: I Heard You Liked Functions...
+Define a function cycle that takes in three functions `f1`, `f2`, `f3`, as arguments. cycle will return another function that should take in an integer argument `n` and return another function. That final function should take in an argument `x` and `cycle` through applying `f1`, `f2`, and `f3` to `x`, depending on what `n` was. Here's what the final function should do to `x` for a few values of `n`:
+
+- `n = 0`, return `x`
+- `n = 1`, apply `f1` to `x`, or return `f1(x)`
+- `n = 2`, apply `f1` to `x` and then `f2` to the result of that, or return `f2(f1(x))`
+- `n = 3`, apply `f1` to `x`, `f2` to the result of applying `f1`, and then `f3` to the result of applying `f2`, or `f3(f2(f1(x)))`
+- `n = 4`, start the cycle again applying `f1`, then `f2`, then `f3`, then `f1` again, or `f1(f3(f2(f1(x))))`
+And so forth.
+Hint: most of the work goes inside the most nested function.
+
+```swift
+// MARK: Q4: I Heard You Liked Functions...
+/// Returns a function that is itself a higher-order function.
+///
+/// - Parameters:
+///   - f1: A function that takes a single argument.
+///   - f2: A function that takes a single argument.
+///   - f3: A function that takes a single argument.
+/// - Returns: A function that takes an integer n and returns another function that takes an argument x and applies f1, f2, and f3 cyclically depending on n.
+///
+/// Examples:
+/// ```
+/// let add1: (Int) -> Int = { $0 + 1 }
+/// let times2: (Int) -> Int = { $0 * 2 }
+/// let add3: (Int) -> Int = { $0 + 3 }
+/// let myCycle = cycle(add1, times2, add3)
+///
+/// let identity = myCycle(0)
+/// print(identity(5))  // 5
+///
+/// let addOneThenDouble = myCycle(2)
+/// print(addOneThenDouble(1))  // 4
+///
+/// let doAllFunctions = myCycle(3)
+/// print(doAllFunctions(2))  // 9
+///
+/// let doMoreThanACycle = myCycle(4)
+/// print(doMoreThanACycle(2))  // 10
+///
+/// let doTwoCycles = myCycle(6)
+/// print(doTwoCycles(1))  // 19
+/// ```
+func cycle(_ f1: @escaping (Int) -> Int, _ f2: @escaping (Int) -> Int, _ f3: @escaping (Int) -> Int) -> (Int) -> ((Int) -> Int) {
+    // TODO: Your Code Here
+}
+```

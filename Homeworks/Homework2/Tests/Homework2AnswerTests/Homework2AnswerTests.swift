@@ -45,4 +45,23 @@ final class Homework2AnswerTests: XCTestCase {
         XCTAssertTrue(b1(0))  // (0 + 1)^2 == 0^2 + 1
         XCTAssertFalse(b1(4)) // (4 + 1)^2 != 4^2 + 1
     }
+
+    func testCycle() {
+        let add1: (Int) -> Int = { $0 + 1 }
+        let times2: (Int) -> Int = { $0 * 2 }
+        let add3: (Int) -> Int = { $0 + 3 }
+        let myCycle = cycle(add1, times2, add3)
+
+        let identity = myCycle(0)
+        let addOneThenDouble = myCycle(2)
+        let doAllFunctions = myCycle(3)
+        let doMoreThanACycle = myCycle(4)
+        let doTwoCycles = myCycle(6)
+
+        XCTAssertEqual(identity(5), 5)
+        XCTAssertEqual(addOneThenDouble(1), 4)
+        XCTAssertEqual(doAllFunctions(2), 9)
+        XCTAssertEqual(doMoreThanACycle(2), 10)
+        XCTAssertEqual(doTwoCycles(1), 19)
+    }
 }

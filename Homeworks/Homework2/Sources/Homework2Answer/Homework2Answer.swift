@@ -1,6 +1,7 @@
 // The Swift Programming Language
 // https://docs.swift.org/swift-book
 
+// MARK: Q1: Lambdas and Currying
 /// Returns a Curried version of a two-argument function FUNC.
 /// 
 /// Examples:
@@ -23,7 +24,6 @@ func lambdaCurry2(_ function: @escaping (Int, Int) -> Int) -> (Int) -> ( (Int) -
     return { a in { b in function(a, b) } }
 }
 
-// MARK: Example functions for testing
 func add(x: Int, y: Int) -> Int {
     return x + y
 }
@@ -36,6 +36,7 @@ func mod(x: Int, y: Int) -> Int {
     return x % y
 }
 
+// MARK: Q2: Count van Count 
 // Returns a function with one parameter N that counts all the numbers from
 /// 1 to N that satisfy the two-argument predicate function `condition`, where
 /// the first argument for `condition` is N and the second argument is the
@@ -116,4 +117,53 @@ fileprivate func compose1(_ f: @escaping (Int) -> Int, _ g: @escaping (Int) -> I
 func compositeIdentity(_ f: @escaping (Int) -> Int, _ g: @escaping (Int) -> Int) -> ((Int) -> Bool) {
     // TODO: Your CODE HERE
     return { x in compose1(f, g)(x) == compose1(g, f)(x) }
+}
+
+// MARK: Q4: I Heard You Liked Functions...
+/// Returns a function that is itself a higher-order function.
+///
+/// - Parameters:
+///   - f1: A function that takes a single argument.
+///   - f2: A function that takes a single argument.
+///   - f3: A function that takes a single argument.
+/// - Returns: A function that takes an integer n and returns another function that takes an argument x and applies f1, f2, and f3 cyclically depending on n.
+///
+/// Examples:
+/// ```
+/// let add1: (Int) -> Int = { $0 + 1 }
+/// let times2: (Int) -> Int = { $0 * 2 }
+/// let add3: (Int) -> Int = { $0 + 3 }
+/// let myCycle = cycle(add1, times2, add3)
+///
+/// let identity = myCycle(0)
+/// print(identity(5))  // 5
+///
+/// let addOneThenDouble = myCycle(2)
+/// print(addOneThenDouble(1))  // 4
+///
+/// let doAllFunctions = myCycle(3)
+/// print(doAllFunctions(2))  // 9
+///
+/// let doMoreThanACycle = myCycle(4)
+/// print(doMoreThanACycle(2))  // 10
+///
+/// let doTwoCycles = myCycle(6)
+/// print(doTwoCycles(1))  // 19
+/// ```
+func cycle(_ f1: @escaping (Int) -> Int, _ f2: @escaping (Int) -> Int, _ f3: @escaping (Int) -> Int) -> (Int) -> ((Int) -> Int) {
+    return { n in
+        return { x in
+            var result = x
+            for i in 0..<n {
+                if i % 3 == 0 {
+                    result = f1(result)
+                } else if i % 3 == 1 {
+                    result = f2(result)
+                } else {
+                    result = f3(result)
+                }
+            }
+            return result
+        }
+    }
 }
