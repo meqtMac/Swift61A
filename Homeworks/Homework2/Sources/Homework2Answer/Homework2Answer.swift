@@ -71,3 +71,49 @@ func count(condition: @escaping (Int, Int) -> Bool) -> (Int) -> Int {
         return count
     }
 }
+
+// MARK: Q3: Composite Identity Function
+/// Returns the composition function which given x, computes f(g(x)).
+///
+/// - Parameters:
+///   - f: A function that takes a single argument.
+///   - g: A function that takes a single argument.
+/// - Returns: A function that computes f(g(x)) when given x.
+///
+/// Examples:
+/// ```
+/// let addOne: (Int) -> Int = { $0 + 1 }
+/// let square: (Int) -> Int = { $0 * $0 }
+/// let a1 = compose1(square, addOne)
+/// print(a1(4))  // 25
+///
+/// let mulThree: (Int) -> Int = { $0 * 3 }
+/// let a2 = compose1(mulThree, a1)
+/// print(a2(4))  // 75
+/// print(a2(5))  // 108
+/// ```
+fileprivate func compose1(_ f: @escaping (Int) -> Int, _ g: @escaping (Int) -> Int) -> ((Int) -> Int) {
+    return { x in f(g(x)) }
+}
+
+/// Returns a function with one parameter x that returns true if f(g(x)) is
+/// equal to g(f(x)). You can assume the result of g(x) is a valid input for f
+/// and vice versa.
+///
+/// - Parameters:
+///   - f: A function that takes a single argument.
+///   - g: A function that takes a single argument.
+/// - Returns: A function that takes a single parameter x and returns true if f(g(x)) equals g(f(x)).
+///
+/// Examples:
+/// ```
+/// let addOne: (Int) -> Int = { $0 + 1 }
+/// let square: (Int) -> Int = { $0 * $0 }
+/// let b1 = compositeIdentity(square, addOne)
+/// print(b1(0))  // true
+/// print(b1(4))  // false
+/// ```
+func compositeIdentity(_ f: @escaping (Int) -> Int, _ g: @escaping (Int) -> Int) -> ((Int) -> Bool) {
+    // TODO: Your CODE HERE
+    return { x in compose1(f, g)(x) == compose1(g, f)(x) }
+}

@@ -37,4 +37,12 @@ final class Homework2Tests: XCTestCase {
         XCTAssertEqual(countPrimes(5), 3)    // 2, 3, 5
         XCTAssertEqual(countPrimes(20), 8)   // 2, 3, 5, 7, 11, 13, 17, 19
     }
+
+    func testComposeIdentity() {
+        let addOne: (Int) -> Int = { $0 + 1 }
+        let square: (Int) -> Int = { $0 * $0 }
+        let b1 = compositeIdentity(square, addOne)
+        XCTAssertTrue(b1(0))  // (0 + 1)^2 == 0^2 + 1
+        XCTAssertFalse(b1(4)) // (4 + 1)^2 != 4^2 + 1
+    }
 }
