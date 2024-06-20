@@ -19,10 +19,6 @@ jobs:
 
     runs-on: ${{ matrix.os }}
 
-    # strategy:
-    #   matrix:
-    #     target: [Homework01AnswerTests, Homework02AnswerTests, Homework03AnswerTests]  # Add more targets as needed
-
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
