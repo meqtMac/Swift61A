@@ -10,27 +10,7 @@ Introduction to Swift and Sharing of my thought on how to learn Swift like [CS61
 ## The basics
 
 
-### Values
-value: 
-
-`let`, `var`, `Type` and literal
-
-basice types: 
-Int, 
-- constant declartion
-```swift
-let intConstant = 10
-let doubleConstant = 10.0
-let str = "Swift61A"
-```
-- some basic values: Int, Float, Double, String, Character
-```
-Int, Double, String
-```
-- Type Annotation
-- Automatic Type Inference
-- variable declaration
-- mutability
+### [Values](docs/Lectures/Lecture01:%20Values)
 
 ### Functions
 

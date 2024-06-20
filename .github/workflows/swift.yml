@@ -12,8 +12,8 @@ jobs:
         target:
           - name: Homework1AnswerTests
             path: Homeworks/Homework1
-          # - name: Homework02AnswerTests
-          #   path: Homeworks/Homework2
+          - name: Homework2AnswerTests
+            path: Homeworks/Homework2
           # - name: Homework03AnswerTests
           #   path: Homeworks/Homework3
 
@@ -31,9 +31,6 @@ jobs:
       uses: swift-actions/setup-swift@v2
       with:
         swift-version: ${{ matrix.swift }}  # Specify the Swift version you need
-
-    # - name: Change to homework directory
-    #   run: cd ${{ matrix.target.path }}
 
     - name: Build and test
       run: | 
