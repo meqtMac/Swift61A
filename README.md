@@ -11,17 +11,25 @@ Introduction to Swift and Sharing of my thought on how to learn Swift like [CS61
 
 ## The basics
 
-### [Values](docs/Lectures/Lecture01:%20Values)
+### [Values](docs/Lectures/Lecture01:%20Values.md)
 
-### Functions
+### [Control Flows and Functions](docs/Lectures/Lecture02:%20Functions.md)
+
+give examples on array
 
 functions need type annotation thus Types should be should before Functions
+- if statement
+- while loops statement
+- for loops // ( in )
+- function call use print as example
 
-### Controls
+- 
 
-how to implement functions
+<!-- ### Controls
 
-if, for, while statement
+how to implement functions -->
+
+<!-- if, for, while statement -->
 
 ### Closures and Higher Order functions
 
