@@ -3,7 +3,7 @@ import XCTest
 
 final class Homework2Tests: XCTestCase {
     func testLambdaCurry() {
-        let curriedAdd = lambdaCurry2(add)
+        let curriedAdd = lambdaCurry2(Homework2.add)
         let addThree = curriedAdd(3)
         XCTAssertEqual(addThree(5), 8)
 

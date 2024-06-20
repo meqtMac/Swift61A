@@ -1,9 +1,9 @@
 import XCTest
 @testable import Homework2Answer
 
-final class Homework2Tests: XCTestCase {
+final class Homework2AnswerTests: XCTestCase {
     func testLambdaCurry() {
-        let curriedAdd = lambdaCurry2(add)
+        let curriedAdd = lambdaCurry2(Homework2Answer.add)
         let addThree = curriedAdd(3)
         XCTAssertEqual(addThree(5), 8)
 
