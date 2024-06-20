@@ -6,9 +6,10 @@ Introduction to Swift and Sharing of my thought on how to learn Swift like [CS61
 
 ## 📝Homeworks
 - </>[Homework1](docs/Homeworks/Homework1.md)
+- </>[Homework2](docs/Homeworks/Homework2.md)
+
 
 ## The basics
-
 
 ### [Values](docs/Lectures/Lecture01:%20Values)
 
